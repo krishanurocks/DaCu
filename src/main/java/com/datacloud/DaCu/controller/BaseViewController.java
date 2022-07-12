@@ -9,13 +9,11 @@ public class BaseViewController {
 
     @RequestMapping("/")
     public String viewHome(ModelMap map)    {
-        map.addAttribute("msg","Welcome Krishanu!");
         return "index";
     }
 
-    @RequestMapping("/user")
+    @RequestMapping("/dashboard")
     public String viewUserHome(ModelMap map)    {
-        map.addAttribute("msg","Welcome User!");
-        return "user";
+        return "dashboard";
     }
 }

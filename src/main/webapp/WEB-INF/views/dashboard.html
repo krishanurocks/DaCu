@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | DaCu</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="dist/img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="dist/img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="dist/img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="dist/img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="dist/img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="dist/img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="dist/img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="dist/img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="dist/img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="dist/img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="dist/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="dist/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="dist/img/favicon-16x16.png">
+    <link rel="manifest" href="dist/img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="dist/img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+</head>
+<body class="dark-mode layout-fixed sidebar-collapse text-sm">
+<div class="wrapper">
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img class="animation__shake" src="dist/img/logo.png" alt="AdminLTELogo" height="60" width="60">
+    </div>
+    <div class="content-wrapper" style="min-height: 492px;">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="small-box bg-info">
+                            <div class="ribbon-wrapper ribbon-lg" style="opacity: .7;">
+                                <div class="ribbon bg-danger text-lg">
+                                    <a href="#" data-toggle="modal" data-target="#modal-logout"><i class="fas fa-cloud"></i></a>
+                                </div>
+                            </div>
+                            <div class="inner">
+                                <h3><div class="time col-sm-6"></div></h3>
+                                <p><div class="date-time col-sm-6"></div></p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="modal-logout" style="display: none;" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-sm">
+                                <div class="modal-content">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button class="btn btn-warning btn-block" id="logout" type="button">
+                                                <span class="spinner-border spinner-border-sm text-danger" role="status" id="logout-spiner" aria-hidden="true" style="display: none;"></span>
+                                                Logout
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="small-box bg-warning">
+                            <div class="ribbon-wrapper ribbon-lg" style="opacity: .7;">
+                                <div class="ribbon bg-info text-lg">
+                                    <a href="#" data-toggle="modal" data-target="#modal-inhand"><i class="fas fa-glasses"></i></a>
+                                </div>
+                            </div>
+                            <div class="inner">
+                                <h3><div><i class="fas fa-rupee-sign"></i> 150</div></h3>
+                                <p><div>Inhand</div></p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-money-bill"></i>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="modal-inhand" style="display: none;" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-warning">Inhand</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">x</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card direct-chat collapsed-card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Edit</h3>
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="direct-chat-messages">
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Is this template really for free? That's unbelievable!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            You better believe it!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Working with AdminLTE on a great new app! Wanna join?
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            I would love to.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="direct-chat-contacts">
+                                                    <ul class="contacts-list">
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Count Dracula
+                                                                    <small class="contacts-list-date float-right">2/28/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">How have you been? I was...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Sarah Doe
+                                                                    <small class="contacts-list-date float-right">2/23/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I will be waiting for...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nadia Jolie
+                                                                    <small class="contacts-list-date float-right">2/20/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I'll call you back at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nora S. Vans
+                                                                    <small class="contacts-list-date float-right">2/10/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Where is your new...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    John K.
+                                                                    <small class="contacts-list-date float-right">1/27/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Can I take a look at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Kenneth M.
+                                                                    <small class="contacts-list-date float-right">1/4/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Never mind I found...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <form action="#" method="post">
+                                                    <div class="input-group">
+                                                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                                        <span class="input-group-append">
+                                                        <button type="button" class="btn btn-warning">Send</button>
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-success">
+                            <div class="inner">
+                                <h3><i class="fas fa-rupee-sign"></i> 150</h3>
+                                <p>Incomes</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <a href="#" class="small-box-footer" data-toggle="modal" data-target="#modal-incomes"><i class="fas fa-glasses fa-2x"></i></a>
+                        </div>
+                        <div class="modal fade" id="modal-incomes" style="display: none;" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-success">Incomes</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">x</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card direct-chat collapsed-card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">View</h3>
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="direct-chat-messages">
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Is this template really for free? That's unbelievable!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            You better believe it!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Working with AdminLTE on a great new app! Wanna join?
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            I would love to.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="direct-chat-contacts">
+                                                    <ul class="contacts-list">
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Count Dracula
+                                                                    <small class="contacts-list-date float-right">2/28/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">How have you been? I was...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Sarah Doe
+                                                                    <small class="contacts-list-date float-right">2/23/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I will be waiting for...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nadia Jolie
+                                                                    <small class="contacts-list-date float-right">2/20/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I'll call you back at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nora S. Vans
+                                                                    <small class="contacts-list-date float-right">2/10/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Where is your new...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    John K.
+                                                                    <small class="contacts-list-date float-right">1/27/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Can I take a look at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Kenneth M.
+                                                                    <small class="contacts-list-date float-right">1/4/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Never mind I found...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card direct-chat collapsed-card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Edit</h3>
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="direct-chat-messages">
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Is this template really for free? That's unbelievable!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            You better believe it!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Working with AdminLTE on a great new app! Wanna join?
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            I would love to.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="direct-chat-contacts">
+                                                    <ul class="contacts-list">
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Count Dracula
+                                                                    <small class="contacts-list-date float-right">2/28/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">How have you been? I was...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Sarah Doe
+                                                                    <small class="contacts-list-date float-right">2/23/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I will be waiting for...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nadia Jolie
+                                                                    <small class="contacts-list-date float-right">2/20/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I'll call you back at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nora S. Vans
+                                                                    <small class="contacts-list-date float-right">2/10/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Where is your new...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    John K.
+                                                                    <small class="contacts-list-date float-right">1/27/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Can I take a look at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Kenneth M.
+                                                                    <small class="contacts-list-date float-right">1/4/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Never mind I found...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <form action="#" method="post">
+                                                    <div class="input-group">
+                                                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                                        <span class="input-group-append">
+                                                        <button type="button" class="btn btn-warning">Send</button>
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-success">
+                            <div class="inner">
+                                <h3><i class="fas fa-rupee-sign"></i> 150</h3>
+
+                                <p>Due Incomes</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <a href="#" class="small-box-footer" data-toggle="modal" data-target="#modal-due-incomes"><i class="fas fa-glasses fa-2x"></i></a>
+                        </div>
+                        <div class="modal fade" id="modal-due-incomes" style="display: none;" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-success">Due Incomes</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">x</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card direct-chat collapsed-card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">View</h3>
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="direct-chat-messages">
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Is this template really for free? That's unbelievable!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            You better believe it!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Working with AdminLTE on a great new app! Wanna join?
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            I would love to.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="direct-chat-contacts">
+                                                    <ul class="contacts-list">
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Count Dracula
+                                                                    <small class="contacts-list-date float-right">2/28/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">How have you been? I was...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Sarah Doe
+                                                                    <small class="contacts-list-date float-right">2/23/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I will be waiting for...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nadia Jolie
+                                                                    <small class="contacts-list-date float-right">2/20/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I'll call you back at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nora S. Vans
+                                                                    <small class="contacts-list-date float-right">2/10/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Where is your new...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    John K.
+                                                                    <small class="contacts-list-date float-right">1/27/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Can I take a look at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Kenneth M.
+                                                                    <small class="contacts-list-date float-right">1/4/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Never mind I found...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card direct-chat collapsed-card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Edit</h3>
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="direct-chat-messages">
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Is this template really for free? That's unbelievable!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            You better believe it!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Working with AdminLTE on a great new app! Wanna join?
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            I would love to.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="direct-chat-contacts">
+                                                    <ul class="contacts-list">
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Count Dracula
+                                                                    <small class="contacts-list-date float-right">2/28/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">How have you been? I was...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Sarah Doe
+                                                                    <small class="contacts-list-date float-right">2/23/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I will be waiting for...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nadia Jolie
+                                                                    <small class="contacts-list-date float-right">2/20/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I'll call you back at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nora S. Vans
+                                                                    <small class="contacts-list-date float-right">2/10/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Where is your new...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    John K.
+                                                                    <small class="contacts-list-date float-right">1/27/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Can I take a look at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Kenneth M.
+                                                                    <small class="contacts-list-date float-right">1/4/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Never mind I found...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <form action="#" method="post">
+                                                    <div class="input-group">
+                                                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                                        <span class="input-group-append">
+                                                        <button type="button" class="btn btn-warning">Send</button>
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3><i class="fas fa-rupee-sign"></i> 150</h3>
+
+                                <p>Expanses</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <a href="#" class="small-box-footer" data-toggle="modal" data-target="#modal-expanses"><i class="fas fa-glasses fa-2x"></i></a>
+                        </div>
+                        <div class="modal fade" id="modal-expanses" style="display: none;" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-danger">Expanses</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">x</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card direct-chat collapsed-card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">View</h3>
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="direct-chat-messages">
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Is this template really for free? That's unbelievable!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            You better believe it!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Working with AdminLTE on a great new app! Wanna join?
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            I would love to.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="direct-chat-contacts">
+                                                    <ul class="contacts-list">
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Count Dracula
+                                                                    <small class="contacts-list-date float-right">2/28/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">How have you been? I was...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Sarah Doe
+                                                                    <small class="contacts-list-date float-right">2/23/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I will be waiting for...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nadia Jolie
+                                                                    <small class="contacts-list-date float-right">2/20/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I'll call you back at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nora S. Vans
+                                                                    <small class="contacts-list-date float-right">2/10/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Where is your new...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    John K.
+                                                                    <small class="contacts-list-date float-right">1/27/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Can I take a look at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Kenneth M.
+                                                                    <small class="contacts-list-date float-right">1/4/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Never mind I found...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card direct-chat collapsed-card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Edit</h3>
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="direct-chat-messages">
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Is this template really for free? That's unbelievable!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            You better believe it!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Working with AdminLTE on a great new app! Wanna join?
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            I would love to.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="direct-chat-contacts">
+                                                    <ul class="contacts-list">
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Count Dracula
+                                                                    <small class="contacts-list-date float-right">2/28/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">How have you been? I was...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Sarah Doe
+                                                                    <small class="contacts-list-date float-right">2/23/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I will be waiting for...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nadia Jolie
+                                                                    <small class="contacts-list-date float-right">2/20/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">I'll call you back at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Nora S. Vans
+                                                                    <small class="contacts-list-date float-right">2/10/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Where is your new...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    John K.
+                                                                    <small class="contacts-list-date float-right">1/27/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Can I take a look at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                <span class="contacts-list-name">
+                                                                    Kenneth M.
+                                                                    <small class="contacts-list-date float-right">1/4/2015</small>
+                                                                </span>
+                                                                    <span class="contacts-list-msg">Never mind I found...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <form action="#" method="post">
+                                                    <div class="input-group">
+                                                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                                        <span class="input-group-append">
+                                                        <button type="button" class="btn btn-warning">Send</button>
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3><i class="fas fa-rupee-sign"></i> 150</h3>
+                                <p>Due Expanses</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fas fa-donate"></i>
+                            </div>
+                            <a href="#" class="small-box-footer" data-toggle="modal" data-target="#modal-due-expanses"><i class="fas fa-glasses fa-2x"></i></a>
+                        </div>
+                        <div class="modal fade" id="modal-due-expanses" style="display: none;" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title text-danger">Due Expanses</h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">x</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card direct-chat collapsed-card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">View</h3>
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="direct-chat-messages">
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Is this template really for free? That's unbelievable!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            You better believe it!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Working with AdminLTE on a great new app! Wanna join?
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            I would love to.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="direct-chat-contacts">
+                                                    <ul class="contacts-list">
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        Count Dracula
+                                                                        <small class="contacts-list-date float-right">2/28/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">How have you been? I was...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        Sarah Doe
+                                                                        <small class="contacts-list-date float-right">2/23/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">I will be waiting for...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        Nadia Jolie
+                                                                        <small class="contacts-list-date float-right">2/20/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">I'll call you back at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        Nora S. Vans
+                                                                        <small class="contacts-list-date float-right">2/10/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">Where is your new...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        John K.
+                                                                        <small class="contacts-list-date float-right">1/27/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">Can I take a look at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        Kenneth M.
+                                                                        <small class="contacts-list-date float-right">1/4/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">Never mind I found...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card direct-chat collapsed-card">
+                                            <div class="card-header">
+                                                <h3 class="card-title">Edit</h3>
+                                                <div class="card-tools">
+                                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                        <i class="fas fa-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="direct-chat-messages">
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Is this template really for free? That's unbelievable!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            You better believe it!
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                            <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            Working with AdminLTE on a great new app! Wanna join?
+                                                        </div>
+                                                    </div>
+                                                    <div class="direct-chat-msg right">
+                                                        <div class="direct-chat-infos clearfix">
+                                                            <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                            <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                                                        </div>
+                                                        <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                                                        <div class="direct-chat-text">
+                                                            I would love to.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="direct-chat-contacts">
+                                                    <ul class="contacts-list">
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user1-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        Count Dracula
+                                                                        <small class="contacts-list-date float-right">2/28/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">How have you been? I was...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user7-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        Sarah Doe
+                                                                        <small class="contacts-list-date float-right">2/23/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">I will be waiting for...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user3-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        Nadia Jolie
+                                                                        <small class="contacts-list-date float-right">2/20/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">I'll call you back at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        Nora S. Vans
+                                                                        <small class="contacts-list-date float-right">2/10/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">Where is your new...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user6-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        John K.
+                                                                        <small class="contacts-list-date float-right">1/27/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">Can I take a look at...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="contacts-list-img" src="dist/img/user8-128x128.jpg" alt="User Avatar">
+                                                                <div class="contacts-list-info">
+                                                                    <span class="contacts-list-name">
+                                                                        Kenneth M.
+                                                                        <small class="contacts-list-date float-right">1/4/2015</small>
+                                                                    </span>
+                                                                    <span class="contacts-list-msg">Never mind I found...</span>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <form action="#" method="post">
+                                                    <div class="input-group">
+                                                        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                                                        <span class="input-group-append">
+                                                            <button type="button" class="btn btn-warning">Send</button>
+                                                        </span>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="info-box mb-3 bg-warning">
+                            <span class="info-box-icon"><i class="fas fa-landmark"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">SBI</span>
+                                <span class="info-box-number"><i class="fas fa-rupee-sign"></i> 5,200</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="info-box mb-3 bg-success">
+                            <span class="info-box-icon"><i class="fas fa-landmark"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">PNB</span>
+                                <span class="info-box-number"><i class="fas fa-rupee-sign"></i> 92,050</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="info-box mb-3 bg-danger">
+                            <span class="info-box-icon"><i class="fas fa-landmark"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">DBS</span>
+                                <span class="info-box-number"><i class="fas fa-rupee-sign"></i> 114,381</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="info-box mb-3 bg-info">
+                            <span class="info-box-icon"><i class="fas fa-landmark"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Kotak</span>
+                                <span class="info-box-number"><i class="fas fa-rupee-sign"></i> 163,921</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <div class="info-box-content">
+                                <span class="info-box-text">Mutual Funds</span>
+                                <span class="info-box-number"><i class="fas fa-rupee-sign"></i> 1,410</span>
+                            </div>
+                            <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <div class="info-box-content">
+                                <span class="info-box-text">PPF</span>
+                                <span class="info-box-number"><i class="fas fa-rupee-sign"></i> 92,050</span>
+                            </div>
+                            <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <div class="info-box-content">
+                                <span class="info-box-text">NPS</span>
+                                <span class="info-box-number"><i class="fas fa-rupee-sign"></i> 114,381</span>
+                            </div>
+                            <span class="info-box-icon bg-danger"><i class="far fa-star"></i></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-12">
+                        <div class="info-box">
+                            <div class="info-box-content">
+                                <span class="info-box-text">Cryptocurrency</span>
+                                <span class="info-box-number"><i class="fas fa-rupee-sign"></i> 163,921</span>
+                            </div>
+                            <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card collapsed-card">
+                    <div class="card-header border-transparent">
+                        <h3 class="card-title" id="report-table"></h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                <tr>
+                                    <th id="report-description">Description</th>
+                                    <th id="report-amount">Amount</th>
+                                    <th id="report-date">Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Rent</td>
+                                    <td>
+                                        <span class="badge badge-danger">
+                                            <i class="fas fa-rupee-sign"></i> 163,921
+                                        </span>
+                                    </td>
+                                    <td>04-01-2022</td>
+                                </tr>
+                                <tr>
+                                    <td>Salary</td>
+                                    <td>
+                                        <span class="badge badge-success">
+                                            <i class="fas fa-rupee-sign"></i> 163,921
+                                        </span>
+                                    </td>
+                                    <td>21-01-2022</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer clearfix">
+                        <h3 class="btn btn-sm btn-success float-left">
+                            <i class="fas fa-rupee-sign"></i> 163,921
+                        </h3>
+                        <h3 class="btn btn-sm btn-danger float-right">
+                            <i class="fas fa-rupee-sign"></i> 163,921
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="dist/js/adminlte.js"></script>
+<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="plugins/raphael/raphael.min.js"></script>
+<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<script src="plugins/chart.js/Chart.min.js"></script>
+<script src="global.js"></script>
+</body>
+</html>
