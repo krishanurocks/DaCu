@@ -10,4 +10,9 @@ public class BaseController {
     public String testView()    {
         return "Welcome Krishanu Acharya";
     }
+
+    @GetMapping("/")
+    public String homeView()    {
+        return "Welcome";
+    }
 }
