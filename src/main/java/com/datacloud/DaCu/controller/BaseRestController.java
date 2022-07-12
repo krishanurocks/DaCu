@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class BaseController {
+public class BaseRestController {
 
-    @GetMapping("/")
+    @GetMapping("/resttest")
     public ResponseEntity<List<String>> getBankList(@RequestParam(name = "name", required = false) String name) {
         try {
             List<String> stringArrayList = new ArrayList<>();
